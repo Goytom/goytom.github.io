@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bahrmado</title>
+<style>
+  :root {
+    --ink: #1c1b19;
+    --paper: #f6f3ec;
+    --thread: #b5482c;
+    --thread-soft: #e7c9bd;
+    --line: #d8d2c4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 6vw;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* woven texture line, evokes textile / sourcing */
+  .weft {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 38px,
+      rgba(28,27,25,0.035) 38px,
+      rgba(28,27,25,0.035) 39px
+    );
+    z-index: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mark {
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--thread);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  .status {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: right;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--thread);
+  }
+
+  .lede {
+    margin-top: 1.6rem;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.55;
+    max-width: 46ch;
+    color: #3a3833;
+  }
+
+  .thread-rule {
+    margin-top: 2.4rem;
+    height: 1px;
+    width: 140px;
+    background: var(--thread);
+    position: relative;
+  }
+
+  .thread-rule::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--thread);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .contact {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .contact a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--thread-soft);
+    transition: border-color 0.2s ease;
+  }
+
+  .contact a:hover {
+    border-color: var(--thread);
+  }
+
+  .coord {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.4;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 8vw 6vw; }
+    header { flex-direction: column; gap: 0.6rem; }
+    .status { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="weft"></div>
+
+  <header>
+    <div class="mark">Bahrmado</div>
+    <div class="status">Site in progress<br>Reach out below</div>
+  </header>
+
+  <main>
+    <h1>Building<br><em>something</em><br>new.</h1>
+    <p class="lede">
+      This site is being woven together. Bahrmado is currently under construction —
+      check back soon, or get in touch directly in the meantime.
+    </p>
+    <div class="thread-rule"></div>
+  </main>
+
+  <footer>
+    <div class="contact">Get in touch — <a href="mailto:hello@bahrmado.com">contact@bahrmado.com</a></div>
+    <div class="coord">Bahrmado.com</div>
+  </footer>
+
+</body>
+</html>
